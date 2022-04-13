@@ -1,4 +1,4 @@
-name: check file list
+name: echo-hello
 
 on: push
 
@@ -6,24 +6,14 @@ jobs:
   echo-hello:
     runs-on: ubuntu-latest
     steps:
-      - name: Set Python Version to 3.9
-        uses: actions/setup-python@v3.1.1
-        with:
-          python-version: "3.9"
-
-      - name: python version check 
-        run: python --version
-
       - name: Checkout
         uses: actions/checkout@v3.0.0
-
+      
       - name: Run ls
         run: ls -al
-
+        
       - name: Run pwd
         run: pwd
-      - name : clone repo
-        run: git clone https://github.com/riverlike/Github_actions/blob/main/.github/workflows/hello_world.py
-
+        
       - name: Run Python File
-        run: python hello_world.py # hello_world.py 실행
+        run: python hello_world.py # hello.py 실행
