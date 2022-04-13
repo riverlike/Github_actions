@@ -8,3 +8,6 @@ jobs:
     steps:
       - name: hello world with echo # step 1
         run: echo Hello World! @bash command
+        
+      - name: hello world with cli # step 2
+        run: python -c "print('Hello World!')"
