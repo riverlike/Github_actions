@@ -11,3 +11,21 @@ jobs:
         
       - name: hello world with cli # step 2
         run: python -c "print('Hello World!')"
+        
+      - name: python version check #step 3
+        run: python --version            
+      
+      #- name: python version upgrade (3.9) 
+      #  run: sudo apt install python3.9
+
+      #- name: python version check
+      #  run: python3.9 --version
+      
+      - name: Setup Python# pakage 가져오기
+        with:
+          python-version: '3.10'
+          
+      - name: python version check #step 3
+        run: python --version   
+        
+      
