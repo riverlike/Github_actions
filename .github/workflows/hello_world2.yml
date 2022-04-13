@@ -1,0 +1,10 @@
+name: echo-hello # Workflow name
+
+on: push # Trigger on push
+
+jobs:
+  echo-hello: # Job name, 칸을 2칸 띄우고 task정의
+    runs-on: ubuntu-latest # Runner Selection 
+    steps:
+      - name: hello world with echo # step 1
+        run: echo Hello World! @bash command
