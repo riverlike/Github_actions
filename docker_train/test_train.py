@@ -27,4 +27,4 @@ model.fit(x_train, y_train, epochs=5)
 
 print( '-'*50 )
 model.evaluate(x_test,  y_test, verbose=2)
-print('-'*50)
+print( '-'*50 )
