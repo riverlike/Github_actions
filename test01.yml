@@ -14,9 +14,5 @@ jobs:
       - name: say hello
         run: echo 'Hello, world!'
 
-      - name: Do other things
-        run: |
-          echo 'this is first github action example!'
-          echo 'LOL'
       - name : say goodbye
         run: echo 'bye cu later! :)'
