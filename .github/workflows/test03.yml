@@ -1,0 +1,26 @@
+name: test03_run_pyfile
+
+on:  
+  push:
+    branches: [ test ] # test 브랜치 미리 생성되어있어야함.
+
+jobs:
+  say_hello:    
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Python Version to 3.9
+        uses: actions/setup-python@v3.1.1
+        with:
+          python-version: "3.9"
+
+      - name: python version check 
+        run: python --version
+       
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: ls
+        run: ls -al
+      
+      - name: pwd
+        run: pwd
