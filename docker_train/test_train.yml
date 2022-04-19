@@ -3,7 +3,7 @@ name: test04_docker_train
 on:
   push:
     paths: 
-      - docker_train/** # 폴더 경로,  브랜치는 ??
+      - .github/workflows/docker_train/** # 폴더 경로,  브랜치는 ??
       #- .github/workflows/test04_docker.yml
     
 jobs:
