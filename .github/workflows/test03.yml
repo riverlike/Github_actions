@@ -22,5 +22,10 @@ jobs:
       - name: ls
         run: ls -al
       
-      - name: pwd
+      - name: pwd  # /home/runner/work/Github_actions/Github_actions
         run: pwd
+      
+      - name: run pythonfile  # /home/runner/work/Github_actions/Github_actions/test.py 
+        run: python test.py  
+      
+    
