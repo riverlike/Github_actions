@@ -9,9 +9,6 @@ on:
 jobs:
   dockerize:
     runs-on: ubuntu-latest
-    env:
-      BASE_DIR: "/var/lib/docker/volumes"
-      TMP_FOLDER: "tmp"
       
     steps:
       - name: Checkout  #내폴더 접근 - 깃헙
