@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
       
     steps:
-      - name: Checkout  #내폴더 접근 - 깃헙
+      - name: Checkout  #내 폴더 접근 - 깃헙
         uses: actions/checkout@v3.0.0
         
       - name: Docker Login  #도커 로그인
