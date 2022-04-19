@@ -1,0 +1,22 @@
+#Github_actions/.github/workflows/test_echo_01.yml
+
+name: test01_helloworld
+
+on:  
+  push:
+    branches: [ test ]
+
+jobs:
+  say_hello:    
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: say hello
+        run: echo 'Hello, world!'
+
+      - name: Do other things
+        run: |
+          echo 'this is first github action example!'
+          echo 'LOL'
+      - name : say goodbye
+        run: echo 'bye cu later! :)'
