@@ -1,0 +1,17 @@
+name: test02_install_python
+
+on:  
+  push:
+    branches: [ test ] # test 브랜치 미리 생성되어있어야함.
+
+jobs:
+  say_hello:    
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Python Version to 3.9
+        uses: actions/setup-python@v3.1.1
+        with:
+          python-version: "3.9"
+
+      - name: python version check 
+        run: python --version
