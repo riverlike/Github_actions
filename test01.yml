@@ -16,3 +16,6 @@ jobs:
 
       - name : say goodbye
         run: echo 'bye cu later! :)'
+        
+      - name : version check
+        run: python --version
