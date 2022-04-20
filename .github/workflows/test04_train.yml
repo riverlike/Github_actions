@@ -35,4 +35,4 @@ jobs:
         # 하지만 태크 적용안됨..
           
       - name: Docker push
-        run: docker run river0609/mlops_test
+        run: docker push river0609/mlops_test
