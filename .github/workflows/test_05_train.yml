@@ -1,0 +1,39 @@
+name: test05_upload_model #/models/폴더에 saved_model이 저장되어있어야함.
+
+on:
+  push:
+    paths: 
+      - .github/workflows/test_05_train.yml      
+          
+jobs:
+  dockerize_mnist:
+    runs-on: ubuntu-latest
+    env:
+      BASE_DIR: "/var/lib/docker/volumes" #러너의 폴더
+      TMP_FOLDER: "tmp"
+      
+    steps:
+      - name: check docker
+        run: docker
+        
+      - name: train with docker
+        # host의 directory['/models/saved_model]와 container의 directory를 연결 
+        run: docker run -v ${{env.TMP_FOLDER}}:/models river0609/mlops_test
+        
+      - name: ls on tmp
+        run: sudo ls ${{env.BASE_DIR}}/${{env.TMP_FOLDER}}/_data/saved_model  #최종 저장위치
+        
+      # 권한 문제가 발생해서 복사해왔다.
+      - name: copy saved model
+        run: |
+          sudo cp -r ${{env.BASE_DIR}}/${{env.TMP_FOLDER}}/_data/saved_model .
+      - name: check files
+        run: ls saved_model
+        
+      - name: Cloud Storage Uploader
+        uses: google-github-actions/upload-cloud-storage@v0.9.0
+        with:
+          credentials: ${{ secrets.GCP_CREDENTIAL }}
+          path: saved_model
+          destination: test-20220420 # 저장할 GCR 의 버킷
+      
