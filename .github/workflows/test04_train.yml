@@ -2,14 +2,13 @@ name: test04_docker_train
 
 on:
   push:
-    paths: 
-      #- test_train/**
-      - .github/workflows/test04_train.yml    
+    paths:       
+      - .github/workflows/test04_train.yml
       #- /home/runner/work/Github_actions/Github_actions/docker_train/** # 폴더 경로,  브랜치는 ??
       #- .github/workflows/test04_docker.yml
     
 jobs:
-  build and run docker image :
+  build_and_run_docker_image:
     runs-on: ubuntu-latest
       
     steps:
