@@ -3,7 +3,7 @@ name: test04_docker_train
 on:
   push:
     paths: 
-      - docker_train/**
+      - test_train/**
       #- /home/runner/work/Github_actions/Github_actions/docker_train/** # 폴더 경로,  브랜치는 ??
       #- .github/workflows/test04_docker.yml
     
@@ -21,20 +21,17 @@ jobs:
           username: river0609 #도커 계정
           password: ${{ secrets.DOCKER_PASSWORD}} # secret 가져오기
       
-      
-      # Github_actions/docker_train/
+      # Github_actions/test_train/
       #   |----- Dockerfile
       #   |----- test_train.py
+      #   |-----.github/workflows/test_dockerize.yml      
         
       - name: Docker build 
-        run: docker build -t river0609/mnist_train3 docker_train
+        run: docker build -t river0609/mnist_train test_train
         
         # 도커허브에 미리생성한 mlops_tutorial 레파지토리하위에 이미지를 올리기위한작업
         # 해당 컨테이너 아이디로(c0fb96ceb688) 이미지명을 레파지토리 이름으로 변경, 대신 테그를 달아줌.
-        #
+        # 하지만 태크 적용안됨..
           
       - name: Docker push
-        #run: docker run river0609/mlops_tutorial:mnist_train3
-        run: docker run river0609/mnist_train3
-        
-        
+        run: docker run river0609/mnist_train  
