@@ -35,5 +35,5 @@ jobs:
         with:
           credentials: ${{ secrets.GCP_CREDENTIAL }}
           path: saved_model
-          destination: test-20220420 # 저장할 GCR 의 버킷
+          destination: test-20220430 # 저장할 GCR 의 버킷
       
