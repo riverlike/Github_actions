@@ -1,4 +1,4 @@
-name: test05_upload_model #/models/폴더에 saved_model이 저장되어있어야함! (test04_train.yml 미리실행)
+name: test05_upload_model #/models/폴더에 saved_model이 저장되어있어야함! (test04_train.yml 미리실행, 도커 허브에 미리 도커이미지 있을것)
 
 on:
   push:
